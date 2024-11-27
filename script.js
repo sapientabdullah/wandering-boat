@@ -87,7 +87,7 @@ const planeMaterial = new THREE.MeshStandardMaterial({
   side: THREE.DoubleSide,
   flatShading: true,
   vertexColors: true,
-  normalMap: new THREE.TextureLoader().load("/public/Water Norm.jpg"),
+  normalMap: new THREE.TextureLoader().load("./public/Water Norm.jpg"),
   roughness: 0.3,
   metalness: 0.2,
 });
@@ -102,7 +102,7 @@ const mouse = {
   y: undefined,
 };
 
-const starsTextureUrl = "/public/background.jpg";
+const starsTextureUrl = "./public/background.jpg";
 const cubeTextureLoader = new THREE.CubeTextureLoader();
 scene.background = cubeTextureLoader.load([
   starsTextureUrl,
@@ -122,14 +122,14 @@ scene.add(moonGroup);
 
 const geometry = new THREE.IcosahedronGeometry(100, 12);
 const material = new THREE.MeshStandardMaterial({
-  map: new THREE.TextureLoader().load("/public/Moon Map 4K.jpg"),
+  map: new THREE.TextureLoader().load("./public/Moon Map 4K.jpg"),
 });
 const moon = new THREE.Mesh(geometry, material);
 moonGroup.add(moon);
 
 const bumpsMaterial = new THREE.MeshStandardMaterial({
   map: new THREE.TextureLoader().load(
-    "/public/Earth Texture Map Moonbump 4K.jpg"
+    "./public/Earth Texture Map Moonbump 4K.jpg"
   ),
   transparent: true,
   opacity: 0.5,
@@ -140,7 +140,7 @@ moonGroup.add(bumps);
 
 const boatLoader = new GLTFLoader();
 let boat;
-boatLoader.load("/public/Boat/scene.gltf", (gltf) => {
+boatLoader.load("./public/Boat/scene.gltf", (gltf) => {
   boat = gltf.scene;
   boat.scale.set(12, 12, 12);
   boat.position.set(0, 0, 0);
